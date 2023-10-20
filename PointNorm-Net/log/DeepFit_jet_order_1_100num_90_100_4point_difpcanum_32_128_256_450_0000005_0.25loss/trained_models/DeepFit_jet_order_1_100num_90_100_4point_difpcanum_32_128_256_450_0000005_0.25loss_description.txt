@@ -1,0 +1,1 @@
+if< 0.02 knn=18, if< 0.14 knn = 64, if< 0.16 knn = 128, else knn = 450; select 50
