@@ -4,7 +4,7 @@
 This paper will published at IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). Please refer to our paper and project for more detail.
 ### Introduction
 This is the code for self-supervised normal estimation using PointNorm-Net.
-It allows to train, test and evaluate our unsupervised normal estimation model.
+It allows to train, test and evaluate our self-supervised normal estimation model.
 We provide the code for train a model or use a pretrained model on your own data.
 
 Please follow the installation instructions below.
