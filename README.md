@@ -20,29 +20,22 @@ For a full list of requirements see `requirements.txt`.
 
 #####  2. Estimate normal vectors for your data:
 
-To test DeepFit on your own data. Run the `compute_normals.py` in the `./tutorial` directory.
-It allows you to specify the input file path (`.xyz` file), output path for the estimated normals, jet order (1-4), and a mode (use pretrained DeepFit or our pytorch implementation of the classic jet fitting).
-
-To help you get started, we provide a step by step tutorial `./tutorial/DeepFit_tutorial.ipynb` with extended explenations, interactive visualizations and example files.
+To test PointNorm-Net on your own data. Run the `test_n_est.py`.
+It allows you to specify the input file path (`.xyz` file), output path for the estimated normals.
 
 ##### 3.Reproduce the results in the paper:
-Run `get_data.py` to download PCPNet data.
-
-Alternatively, Download the PCPNet data from this [link](http://geometry.cs.ucl.ac.uk/projects/2018/pcpnet/pclouds.zip) and place it in  `./data/pcpnet/` directory.
+Download the PCPNet data from this [link](http://geometry.cs.ucl.ac.uk/projects/2018/pcpnet/pclouds.zip) and place it in  `./data/pcpnet/` directory.
 
 To test the model and output all normal estimations for the dataset run `test_n_est.py`. This will export the normal estimations for each file in the provided file list as a `.normals` file.  
 
 To evaluate the results and output a report run `evaluate.py`
 
-To get all of the method's outputs exported (`beta, weights, normals, curvatures`) run `test_c_est.py`.
-
-To evaluate curvature estimation performance run `evaluate_curvatures.py` (after exporting the results).
-
 ##### 4.Train your own model:
 To train a model run `train_n_est.py`.
 
-To train, test and evaluate run `run_DeepFit_single_experiment.py`.
-Alternatively you can run individual train, test and evaluation.
+To test run `test_n_esy.py`.
+
+To evaluate run `evaluate.py`.
 
 #### PointNorm
 PointNorm adopts the traditional optimization method, uses the Adam optimizer, does not use the deep neural network training, and is the original traditional unsupervised method.
