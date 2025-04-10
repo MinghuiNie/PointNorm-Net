@@ -5,17 +5,100 @@
     <!-- 添加Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <h1 style="text-align: center;">Welcome to My IProject</h1>
-    <p>This is the homepage for my GitHub repository.</p>
-    <div style="text-align: center;">
-        <a href="https://github.com/MinghuiNie/PointNorm-Net">
-            <i class="fab fa-github"></i> Code
+<body style="max-width: 1200px; margin: 0 auto;">
+    <div style="margin-top: 20px; background-color: #f5f5f5; padding: 20px; border-radius: 5px;">
+        <h1 style="text-align: center;">PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation</h1>
+        <p style="text-align: center; color: blue;">
+            Jie Zhang <sup>1</sup>, Minghui Nie <sup>2</sup>, Changqing Zou <sup>3</sup>, Jian Liu <sup>4</sup>, Ligang Liu <sup>5</sup> and Junjie Cao <sup>6</sup>
+        </p>
+        <p style="text-align: center; color: blue;">
+            <sup>1</sup>Liaoning Normal University<br>
+            <sup>2</sup>Jiangnan University<br>
+            <sup>3</sup>Zhejiang University<br>
+            <sup>4</sup>Shenyang University of Technology<br>
+            <sup>5</sup>University of Science and Technology of China<br>
+            <sup>6</sup>Dalian University of Technology
+        </p>
+        <p style="text-align: center; font-size: 1.2em;"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI2025)</em></p>
+    </div>
+    <div style="text-align: center; font-size: 1.4em;">
+        <a href="https://github.com/MinghuiNie/PointNorm-Net" style="color: inherit;">
+            <i class="fab fa-github" style="color: #666; font-size: 1.2em;"></i> Code
         </a>
         &nbsp;&nbsp;
-        <a href="https://arxiv.org/abs/your-paper-id">
-            <i class="fas fa-file-alt"></i> Paper
+        <a href="https://arxiv.org/abs/2304.04884" style="color: inherit;">
+            <i class="fas fa-file-alt" style="color: #666; font-size: 1.2em;"></i> Paper
         </a>
     </div>
+    <h2 style="margin-top: 30px; margin-bottom: 10px;">Abstract</h2>
+    <p style="margin-top: 0px; white-space: pre-wrap;">Although supervised deep normal estimators have recently shown impressive results on synthetic benchmarks, their performance deteriorates significantly in real-world scenarios due to the domain gap between synthetic and real data. Building high-quality real training data to boost those supervised methods is not trivial because point-wise annotation of normals for varying-scale real-world 3D scenes is a tedious and expensive task. This paper introduces PointNorm-Net, the first self-supervised deep learning framework to tackle this challenge. The key novelty of PointNorm-Net is a three-stage multi-modal normal distribution estimation paradigm that can be integrated into either deep or traditional optimization-based normal estimation frameworks. Extensive experiments show that our method achieves superior generalization and outperforms state-of-the-art conventional and deep learning approaches across three real-world datasets that exhibit distinct characteristics compared to the synthetic training data.</p>
+    
+    <h2 style="margin-top: 30px; margin-bottom: 10px;">Introduction</h2>
+    <p style="margin-top: 0px; text-align: left;">A large number of deep neural networks
+        have been proposed for accurate normal estimation, and these networks
+        outperform conventional methods on synthesized benchmark datasets. However,
+        their performance on raw point clouds drops significantly
+        because they are not trained with real data and there exists
+        a domain gap between real and synthetic data. 
+        It is not easy to accurately annotate point-wise normals for the noisy data from various sources, 
+        which makes them less accessible for supervised learning. Conventional normal estimators are data-independent. 
+        However it is widely known that they usually generate over-smoothed results or required a long computation time, 
+        as illustrated in Fig. 1. It is essential to design a more powerful and general normal estimation method for raw 
+        point clouds scanned by different 3D scanners without having to rely on costly normal annotations. This paper proposes PointNorm-Net, the first self-supervised deep method, 
+        for normal estimation. PointNorm-Net is designed based on a "ground-truth sampling" property that we established. 
+        This property states that given a smooth underlying surface and zero-mean noise, the ground-truth normal of a query 
+        point is the expectation of a set of randomly sampled candidate normals. </p>
+        <p style="margin-top: 10px; text-align: left;">
+            The proposed PointNorm-Net combines a patch-based deep normal predictor with a training scheme empowered by an 
+            effective three-stage multimodal distribution estimation paradigm. Based on a multi-sample consensus scheme defined for local 
+            surface regions, the proposed three-stage multi-modal distribution estimation paradigm offers the predictor feasible 
+            candidate normals and training losses. These losses make the network learn the major mode of the distribution from 
+            numerous similar patches in training data, endowing the method with better generalization and scalability. During 
+            inference, there is only a forward pass of the network, thus ensuring efficiency. </p>
+    <div style="text-align: center;">
+    <img src="teaser14.jpg" alt="Project Illustration" style="width: 100%; max-width: 1100px;">
+    </div>    
+    <p style="margin-top: 5px; margin-bottom: 20px; text-align: left;">Fig. 1: PointNorm-Net demonstrates better performance in 
+        comparison to traditional optimization-based methods and supervised deep normal estimators when dealing with real-world 
+        point cloud datasets, such as LiDAR sequence 06 of KITTI (left) and the PCV Kinect dataset (right). The normal orientations 
+        are color-coded. On the left side, the estimated normals generated by DeepFit and PointNorm-Net are illustrated and zoomed 
+        in the blue and red boxes respectively for quality comparison. In contrast to the SOTA deep learning based approach 
+        DeepFit, PointNorm-Net can better preserve sharp features and tiny structures while eliminating scanning noise 
+        more effectively. On the right side, the accuracy versus efficiency plot and 4 results on the PCV dataset indicate 
+        that PointNorm-Net is as fast as supervised deep methods, yet achieves much better accuracy.</p>
+    </div>
+
+    <h2 style="margin-top: 30px; margin-bottom: 10px;">Results</h2>
+    <div style="text-align: center;">
+        <img src="PCV.jpg" alt="Results Illustration" style="width: 100%; max-width: 800px;">
+    </div>
+    <p style="margin-top: -5px; margin-bottom: 30px; text-align: left;">Fig. 2: Visual comparison of estimated normals on two statues scanned by Kinect from PCV. Supervised deep normal estimators suffer from the scanner noise, <em>i.e.</em> the small fluctuations in smooth regions. The conventional methods can handle the fluctuations but may introduce artifacts around sharp features. PointNorm-Net works well for both two cases. The statues scanned by a high-precision Artec Spider<sup><em>TM</em></sup> scanner and a Kinect are shown in the rightmost column respectively. The point normal vectors are mapped to RGB colors. Numbers show RMS of the results.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="NYUV2.jpg" alt="Result 1 Illustration" style="width: 100%; max-width: 800px;">
+        <p style="margin-top: -5px; margin-bottom: 30px;">Fig. 3: Visual comparison of estimated normals on two scanned scenes from NYUV2. After performing unoriented normal estimation, we flip normals according to the camera position. Colors encode the direction of oriented normals. SHS-Net, MSECNet, CMG-Net, AdaFit, and DeepFit can not suppress scanner noise, refer to the plane regions, such as walls and upper surfaces of tables. HF-cubes, LRRfast and PCV  may fail to preserve tiny structures. PointNorm-Net overcomes these challenges.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="KITTI.jpg" alt="Result 2 Illustration" style="width: 80%; max-width: 500px;">
+        <p style="margin-top: -5px; margin-bottom: 30px;">Fig. 4: PointNorm-Net identifies more geometry structures with higher quality on KITTI dataset.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="Denoising.jpg" alt="Result 3 Illustration" style="width: 80%; max-width: 500px;">
+        <p style="margin-top: -5px; margin-bottom: 30px;">Fig. 5: More visually pleasing surfaces are generated by the proposed denoising method (DMR+CPI+L<sub>ccp</sub>+FCF) than the baseline method: DMR. The colors, from blue to red, encode the P2S error.</p>
+    </div>
+    
+    <h2>Citation</h2>
+    <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; max-width: 800px; margin-left: 2em;">
+        <pre style="white-space: pre-wrap;">
+@article{zhang2025pointnorm,
+  title={PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation},
+  author={Jie Zhang, Minghui Nie, Changqing Zou, Jian Liu, Ligang Liu and Junjie Cao},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2025}
+}
+        </pre>
+    </div>
+    <hr>
+    <p>Page last updated: This page was last updated: 10/4/2025.</p>
 </body>
 </html>
