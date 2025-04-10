@@ -25,7 +25,7 @@ It allows you to specify the input file path (`.xyz` file), output path for the 
 
 To help you get started, we provide a step by step tutorial `./tutorial/DeepFit_tutorial.ipynb` with extended explenations, interactive visualizations and example files.
 
- ##### 3.Reproduce the results in the paper:
+##### 3.Reproduce the results in the paper:
 Run `get_data.py` to download PCPNet data.
 
 Alternatively, Download the PCPNet data from this [link](http://geometry.cs.ucl.ac.uk/projects/2018/pcpnet/pclouds.zip) and place it in  `./data/pcpnet/` directory.
@@ -44,6 +44,13 @@ To train a model run `train_n_est.py`.
 To train, test and evaluate run `run_DeepFit_single_experiment.py`.
 Alternatively you can run individual train, test and evaluation.
 
+#### PointNorm
+PointNorm adopts the traditional optimization method, uses the Adam optimizer, does not use the deep neural network training, and is the original traditional unsupervised method.
+
+The code was tested with Python 3.7.3, torch 1.4.0, torchvision 0.5.0, CUDA 10.1.243, and cuDNN 7605 on Ubuntu 18.04.
+
+PointNorm is just a network-less version of PointNorm-Net. 
+
 #### Visualization
 Click on the link for details on [how to visialize normal vectors on 3D point clouds](http://www.itzikbs.com/how-to-visualize-normal-vectors-on-3d-point-clouds).
 
@@ -54,13 +61,6 @@ For visualizing all of the PCPNet dataset results and exporting images use `expo
 ### Citation
 
 Please cite our paper if you use this code in your own work:
-
-## PointNorm
-PointNorm adopts the traditional optimization method, uses the Adam optimizer, does not use the deep neural network training, and is the original traditional unsupervised method.
-
-The code was tested with Python 3.7.3, torch 1.4.0, torchvision 0.5.0, CUDA 10.1.243, and cuDNN 7605 on Ubuntu 18.04.
-
-PointNorm is just a network-less version of PointNorm-Net. 
 
 ```
 @article{zhang2025pointnorm,
