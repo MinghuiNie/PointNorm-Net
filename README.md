@@ -3,9 +3,9 @@
 
 This paper will published at IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). Please refer to our paper and project for more detail.
 ### Introduction
-This is the code for self-supervised normal estimation using PointNorm-Net.
-It allows to train, test and evaluate our self-supervised normal estimation model.
-We provide the code for train a model or use a pretrained model on your own data.
+This is the code for self-supervised normal estimation using PointNorm-Net. It allows to train, test and evaluate our self-supervised normal estimation model. We provide the code for train a model or use a pretrained model on your own data.
+
+Technical Note: The implementation framework of this code resembles DeepFit in architecture and shares similar usage patterns. For specific implementation details, we direct readers to the original [DeepFit](https://github.com/sitzikbs/DeepFit) reference.
 
 Please follow the installation instructions below.
  
@@ -23,33 +23,18 @@ For a full list of requirements see `requirements.txt`.
 To test PointNorm-Net on your own data. Run the `test_n_est.py`.
 It allows you to specify the input file path (`.xyz` file), output path for the estimated normals.
 
-##### 3.Reproduce the results in the paper:
-Download the PCPNet data from this [link](http://geometry.cs.ucl.ac.uk/projects/2018/pcpnet/pclouds.zip) and place it in  `./data/pcpnet/` directory.
-
-To test the model and output all normal estimations for the dataset run `test_n_est.py`. This will export the normal estimations for each file in the provided file list as a `.normals` file.  
-
-To evaluate the results and output a report run `evaluate.py`
 
 ##### 4.Train your own model:
 To train a model run `train_n_est.py`.
 
-To test run `test_n_esy.py`.
+To test run `test_n_esy.py`. Note that the pre-trained model should be replaced with the user-trained model. 
 
-To evaluate run `evaluate.py`.
+To evaluate run `evaluate.py`. 
 
-#### PointNorm
-PointNorm adopts the traditional optimization method, uses the Adam optimizer, does not use the deep neural network training, and is the original traditional unsupervised method.
+### PointNorm
+PointNorm adopts the traditional optimization method, uses the Adam optimizer, does not use the deep neural network training, and is the original traditional self-supervised method. To put it crudely (though not quite correctly), PointNorm is just a network-less version of PointNorm-Net. 
 
 The code was tested with Python 3.7.3, torch 1.4.0, torchvision 0.5.0, CUDA 10.1.243, and cuDNN 7605 on Ubuntu 18.04.
-
-PointNorm is just a network-less version of PointNorm-Net. 
-
-#### Visualization
-Click on the link for details on [how to visialize normal vectors on 3D point clouds](http://www.itzikbs.com/how-to-visualize-normal-vectors-on-3d-point-clouds).
-
-For a quick visualization of a single 3D point cloud with the normal vector overlay run the `visualize_normals.m` script provided MATLAB code in `./MATLAB`.
-
-For visualizing all of the PCPNet dataset results and exporting images use `export_visualizations.m`.
 
 ### Citation
 
