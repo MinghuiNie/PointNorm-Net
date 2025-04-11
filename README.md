@@ -3,7 +3,7 @@
 ![图片描述](/docs/teaser14.jpg)
 This paper will published at IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). Please refer to our paper and project for more detail.
 ### Introduction
-![图片描述](/docs/pipeline.jpg){: width="10%"}
+![图片描述](/docs/pipeline.jpg){width="10%"} 
 This is the code for self-supervised normal estimation using PointNorm-Net. It allows to train, test and evaluate our self-supervised normal estimation model. We provide the code for train a model or use a pretrained model on your own data.
 
 Technical Note: The implementation framework of this code resembles DeepFit in architecture and shares similar usage patterns. For specific implementation details, we direct readers to the original [DeepFit](https://github.com/sitzikbs/DeepFit) reference.
