@@ -1,5 +1,5 @@
 # PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation (TPAMI 2025)
-[[Paper](https://arxiv.org/abs/2304.04884)] [[Code](https://github.com/MinghuiNie/PointNorm-Net)] [[Project](https://minghuinie.github.io/PointNorm-Net/)] 
+[[Project](https://minghuinie.github.io/PointNorm-Net/)] [[Paper](https://arxiv.org/abs/2304.04884)] [[Supplementary](https://drive.google.com/file/d/1j6GIqZHthQc_zU0ifTn5sFsggC5MLxlI/view?usp=drive_link)]
 ![图片描述](/docs/teaser14.jpg)
 This paper will published at IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI). Please refer to our paper and project for more detail.
 ### Introduction
