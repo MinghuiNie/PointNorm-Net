@@ -25,7 +25,7 @@ It allows you to specify the input file path (`.xyz` file), output path for the 
 
 
 ##### 4.Train your own model:
-To train a model run `train_n_est.py`.
+To train a model, the user should first use the`compute_multi_normal_v4.m`script located in the`weights&features`folder to calculate both the`.features`and`.weights`files required for network training. These calculations only require the positions of the point clouds. Then, the user can run`train_n_est.py`. 
 
 To test run `test_n_esy.py`. Note that the pre-trained model should be replaced with the user-trained model. 
 
