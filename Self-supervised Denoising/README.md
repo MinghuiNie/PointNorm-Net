@@ -1,8 +1,8 @@
-# Unsupervised Denoising based on our proposed paradigm
+# Self-supervised Denoising based on our proposed paradigm
 
 [[Paper](https://arxiv.org/abs/2304.04884)] [[Code](https://github.com/MinghuiNie/PointNorm-Net)]
 
-This is an implementation of the PointNorm-Net paradigm model for unsupervised point cloud denosing based on our paper "PointNorm-Net: Unsupervised Normal Estimation of 3D Point Clouds via Local Multi-Sampling Consensus".
+This is an implementation of the PointNorm-Net paradigm model for self-supervised point cloud denosing based on our paper "PointNorm-Net: Unsupervised Normal Estimation of 3D Point Clouds via Local Multi-Sampling Consensus".
 
 
 
