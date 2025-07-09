@@ -100,11 +100,16 @@ tensorboard --logdir ./pretrained
 Please cite our paper if you use this code in your own work:
 
 ```
-@article{Zhang2023PointNorm,
-  title={PointNorm-Net: Unsupervised Normal Estimation of 3D Point Clouds via Local Multi-Sampling Consensus},
-  author={Jie Zhang, Minghui Nie, Junjie Cao, Jian Liu, Changqing Zou and Ligang Liu},
-  booktitle={arXiv preprint arXiv:2304.04884},
-  year={2023},
-  month={April}
+@ARTICLE{zhang2025pointnorm,
+author={Zhang, Jie and Nie, Minghui and Zou, Changqing and Liu, Jian and Liu, Ligang and Cao, Junjie},
+journal={IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+title={PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation},
+year={2025},
+volume={47},
+number={08},
+ISSN={1939-3539},
+pages={6515-6530},
+doi={10.1109/TPAMI.2025.3562051},
+url={https://doi.ieeecomputersociety.org/10.1109/TPAMI.2025.3562051},
 }
 ```

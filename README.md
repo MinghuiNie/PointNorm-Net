@@ -41,12 +41,17 @@ The code was tested with Python 3.7.3, torch 1.4.0, torchvision 0.5.0, CUDA 10.1
 Please cite our paper if you use this code in your own work:
 
 ```
-@article{zhang2025pointnorm,
-  title={PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation},
-  author={Jie Zhang, Minghui Nie, Changqing Zou, Jian Liu, Ligang Liu and Junjie Cao},
-  booktitle={arXiv preprint arXiv:2304.04884},
-  year={2025},
-  month={April}
+@ARTICLE{zhang2025pointnorm,
+author={Zhang, Jie and Nie, Minghui and Zou, Changqing and Liu, Jian and Liu, Ligang and Cao, Junjie},
+journal={IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+title={PointNorm-Net: Self-Supervised Normal Prediction of 3D Point Clouds via Multi-Modal Distribution Estimation},
+year={2025},
+volume={47},
+number={08},
+ISSN={1939-3539},
+pages={6515-6530},
+doi={10.1109/TPAMI.2025.3562051},
+url={https://doi.ieeecomputersociety.org/10.1109/TPAMI.2025.3562051},
 }
 ```
 
